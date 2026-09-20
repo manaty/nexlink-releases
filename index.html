@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexlink Desktop — download</title>
+    <meta name="description" content="Install Nexlink Desktop: a menu-bar icon that tells you when a Nexlink message arrives." />
+    <style>
+      :root { color-scheme: light dark; --fg: #111; --muted: #666; --line: #e5e5e5; --accent: #1d4ed8; }
+      @media (prefers-color-scheme: dark) { :root { --fg: #f5f5f5; --muted: #a3a3a3; --line: #333; --accent: #93b4ff; } }
+      * { box-sizing: border-box; }
+      body { margin: 0 auto; max-width: 46rem; padding: 3rem 1.25rem 5rem; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); }
+      h1 { font-size: 1.9rem; margin: 0 0 .4rem; }
+      p.lead { color: var(--muted); margin-top: 0; }
+      h2 { font-size: 1.05rem; margin: 2.2rem 0 .6rem; }
+      ul.files { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+      ul.files li { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: baseline; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+      ul.files .os { flex: 1 1 14rem; font-weight: 600; }
+      ul.files .how { flex: 1 1 100%; color: var(--muted); font-size: .9rem; }
+      ul.files code { font-size: .85rem; }
+      a.dl { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+      a.dl:hover { text-decoration: underline; }
+      .yours { font-size: .8rem; color: var(--accent); }
+      details { margin-top: 1.5rem; color: var(--muted); font-size: .9rem; }
+      summary { cursor: pointer; }
+      pre { overflow-x: auto; padding: .8rem; border: 1px solid var(--line); border-radius: .5rem; }
+      footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
+      .warn { margin-top: 1.6rem; padding: .9rem 1rem; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+    </style>
+  </head>
+  <body>
+    <h1>Nexlink Desktop</h1>
+    <p class="lead">
+      An icon in your menu bar that tells you when a Nexlink message arrives. Clicking the
+      notification opens the conversation on the web version — the app never renders a message.
+    </p>
+
+    <h2>Download</h2>
+    <ul class="files" id="files">
+      <li data-os="windows">
+        <span class="os">Windows <span class="yours" hidden>— this machine</span></span>
+        <a class="dl" href="https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.1.0/Nexlink.Setup.0.1.0.exe">Nexlink.Setup.0.1.0.exe</a>
+        <span class="how">Double-click. Per-user install, no administrator needed.</span>
+      </li>
+      <li data-os="mac">
+        <span class="os">macOS (Apple silicon) <span class="yours" hidden>— this machine</span></span>
+        <a class="dl" href="https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.1.0/Nexlink-0.1.0-arm64.dmg">Nexlink-0.1.0-arm64.dmg</a>
+        <span class="how">Drag to Applications. Unsigned: right-click → Open the first time.</span>
+      </li>
+      <li data-os="debian">
+        <span class="os">Debian / Ubuntu <span class="yours" hidden>— this machine</span></span>
+        <a class="dl" href="https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.1.0/nexlink-desktop_0.1.0_amd64.deb">nexlink-desktop_0.1.0_amd64.deb</a>
+        <span class="how"><code>sudo apt install ./nexlink-desktop_0.1.0_amd64.deb</code></span>
+      </li>
+      <li data-os="arch">
+        <span class="os">Omarchy / Arch <span class="yours" hidden>— this machine</span></span>
+        <a class="dl" href="https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.1.0/Nexlink-0.1.0.AppImage">Nexlink-0.1.0.AppImage</a>
+        <span class="how"><code>chmod +x</code> then run it. Needs <code>fuse2</code>: <code>omarchy pkg add fuse2</code></span>
+      </li>
+    </ul>
+
+    <div class="warn">
+      <strong>First run</strong> opens the Nexlink sign-in window, keeps the session in your system
+      keyring, and then lives in the menu bar. Turn on <em>Launch at login</em> there: Electron
+      cannot receive Web Push, so notifications arrive while the app is running.
+    </div>
+
+    <details>
+      <summary>Machine-readable manifest, sizes and checksums</summary>
+      <p>
+        The app and any installer script can read
+        <a href="/desktop/latest.json"><code>/desktop/latest.json</code></a>
+        (version, per-OS URL, size, sha256). Verify a download with:
+      </p>
+      <pre>sha256sum -c &lt;&lt;&lt;"&lt;hash&gt;  &lt;file&gt;"</pre>
+      <p id="hashes">Loading…</p>
+    </details>
+
+    <footer>
+      Nexlink Desktop 0.1.0 · <a href="https://www.nexlink.ph">nexlink.ph</a> ·
+      <a href="https://github.com/manaty/nexlink-releases/releases">past releases</a>
+    </footer>
+
+    <script>
+      // Which machine is reading this — a hint, nothing more: the links work
+      // everywhere and the manifest is the machine-readable truth.
+      const ua = navigator.userAgent;
+      const os = /Windows/i.test(ua) ? 'windows'
+        : /Mac OS X|Macintosh/i.test(ua) ? 'mac'
+        : /Android|Linux/i.test(ua) ? (navigator.userAgent.includes('Arch') ? 'arch' : 'arch')
+        : null;
+      if (os) {
+        document.querySelectorAll('#files li').forEach((li) => {
+          const mine = li.dataset.os === os;
+          li.querySelector('.yours').hidden = !mine;
+          if (mine) li.style.fontWeight = '600';
+        });
+      }
+      // Sizes and hashes come from the manifest, so the page cannot drift from it.
+      fetch('/desktop/latest.json')
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+        .then((m) => {
+          const rows = Object.entries(m.files).map(([id, f]) =>
+            `<div><code>${f.sha256.slice(0, 16)}…</code> ${(f.bytes / 1048576).toFixed(0)} MB — ${f.name}</div>`
+          );
+          document.getElementById('hashes').innerHTML =
+            rows.join('') + `<div style="margin-top:.5rem">Full manifest: ${m.version}, released ${m.released_at}</div>`;
+        })
+        .catch(() => { document.getElementById('hashes').textContent = 'See /desktop/latest.json'; });
+    </script>
+  </body>
+</html>
