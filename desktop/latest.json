@@ -1,32 +1,32 @@
 {
   "product": "nexlink-desktop",
-  "version": "0.2.1",
-  "released_at": "2026-10-04T23:50:21.889Z",
-  "release_url": "https://github.com/manaty/nexlink-releases/releases/tag/desktop-v0.2.1",
+  "version": "0.2.2",
+  "released_at": "2026-10-05T05:23:34.416Z",
+  "release_url": "https://github.com/manaty/nexlink-releases/releases/tag/desktop-v0.2.2",
   "files": {
     "macos-arm64": {
-      "name": "Nexlink-0.2.1-arm64.dmg",
-      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.1/Nexlink-0.2.1-arm64.dmg",
-      "bytes": 130717657,
-      "sha256": "2c1dfb24c086b54d4095020bea861a49ee5d9a6f606a20f4a1b1ba0695070de7"
+      "name": "Nexlink-0.2.2-arm64.dmg",
+      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.2/Nexlink-0.2.2-arm64.dmg",
+      "bytes": 130719357,
+      "sha256": "cddd1085592145e69976d1d308ed2732bfcb6b5b97b5851c586d0f422662b6c0"
     },
     "linux-appimage-x64": {
-      "name": "Nexlink-0.2.1.AppImage",
-      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.1/Nexlink-0.2.1.AppImage",
-      "bytes": 143589038,
-      "sha256": "e61e12227d857d11a97b03162c3c9afb26e495b4b49b21ce06156b8dce8961eb"
+      "name": "Nexlink-0.2.2.AppImage",
+      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.2/Nexlink-0.2.2.AppImage",
+      "bytes": 143593221,
+      "sha256": "19814f825fc2c4590b9ee6f0a535c764b08c151e7f717db9cf6bfbea53d44633"
     },
     "windows-x64": {
-      "name": "Nexlink.Setup.0.2.1.exe",
-      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.1/Nexlink.Setup.0.2.1.exe",
-      "bytes": 110680519,
-      "sha256": "fcbd6d67f0f1e2211207500fb2b4043e4e8aa67486cd75998d443e1ac92a08ed"
+      "name": "Nexlink.Setup.0.2.2.exe",
+      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.2/Nexlink.Setup.0.2.2.exe",
+      "bytes": 110682909,
+      "sha256": "65ecc91898200cb237b0b300e98d90728eb50603d01965d7a01b7e0bde9e2f68"
     },
     "linux-deb-x64": {
-      "name": "nexlink-desktop_0.2.1_amd64.deb",
-      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.1/nexlink-desktop_0.2.1_amd64.deb",
-      "bytes": 111537684,
-      "sha256": "625f6e2a85febd1ba653774cc8fc101a8ee23d0c57908b1d16421a57272e0556"
+      "name": "nexlink-desktop_0.2.2_amd64.deb",
+      "url": "https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.2/nexlink-desktop_0.2.2_amd64.deb",
+      "bytes": 111540908,
+      "sha256": "1e251f4a4ce1cb0afffd0feac07c50fab2f5ab3f5cf1813d7283dcc6ab0a8dc3"
     }
   }
 }
