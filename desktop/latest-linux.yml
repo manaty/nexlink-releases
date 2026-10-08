@@ -1,0 +1,9 @@
+version: 0.2.3
+files:
+  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink-0.2.3.AppImage
+    sha512: BjO36/XsTtmc+Md9bhCEPHAda8tp4pEYPVn20gHBqQbyC6LCdkjPkkl5rHk5MLtLVfO6bM1hfpeZKynVMDOjig==
+    size: 144007388
+    blockMapSize: 151792
+path: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink-0.2.3.AppImage
+sha512: BjO36/XsTtmc+Md9bhCEPHAda8tp4pEYPVn20gHBqQbyC6LCdkjPkkl5rHk5MLtLVfO6bM1hfpeZKynVMDOjig==
+releaseDate: '2026-10-08T09:18:26.435Z'

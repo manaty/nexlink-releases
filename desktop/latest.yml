@@ -1,0 +1,8 @@
+version: 0.2.3
+files:
+  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink.Setup.0.2.3.exe
+    sha512: XYtFwVBX6MBoa2saSCJLcAuyodksOCAPjuyeLUQp3Ji/Qta3YI83bmHcde9pC81BtFHGwm2UPHqt33z6sGZW7g==
+    size: 110957184
+path: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink.Setup.0.2.3.exe
+sha512: XYtFwVBX6MBoa2saSCJLcAuyodksOCAPjuyeLUQp3Ji/Qta3YI83bmHcde9pC81BtFHGwm2UPHqt33z6sGZW7g==
+releaseDate: '2026-10-08T09:24:53.088Z'

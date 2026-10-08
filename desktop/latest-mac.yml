@@ -1,0 +1,11 @@
+version: 0.2.3
+files:
+  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink-0.2.3-arm64-mac.zip
+    sha512: xPrFzJqYifeT8H2Weos1/JW7IgkIRmEoDdpamxE1Q9qPtxKNrfMosDiRa+RlG7n4n6MqazXzzCl44IUZPmzsBQ==
+    size: 130666475
+  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink-0.2.3-arm64.dmg
+    sha512: iogDavNgDXIZ48UqHUu2hbWsaaCIsG89qFEmyJjwdmvvKEOFRZhfb034iNHSuvsIjh1Ek91VkmO23BG13O71oQ==
+    size: 131125148
+path: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.3/Nexlink-0.2.3-arm64-mac.zip
+sha512: xPrFzJqYifeT8H2Weos1/JW7IgkIRmEoDdpamxE1Q9qPtxKNrfMosDiRa+RlG7n4n6MqazXzzCl44IUZPmzsBQ==
+releaseDate: '2026-10-08T09:18:12.756Z'
