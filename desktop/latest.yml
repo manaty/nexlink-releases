@@ -1,8 +1,8 @@
-version: 0.2.4
+version: 0.2.8
 files:
-  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.4/Nexlink.Setup.0.2.4.exe
-    sha512: ip4bYvb7RJmhpGs1QwT8Z1MIb/kdYGgiz7CMucY5WkJweYazWXDqQcymga6WA6XTG/jvxKVsKRpwqf9Y5dFsXA==
-    size: 111036622
-path: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.4/Nexlink.Setup.0.2.4.exe
-sha512: ip4bYvb7RJmhpGs1QwT8Z1MIb/kdYGgiz7CMucY5WkJweYazWXDqQcymga6WA6XTG/jvxKVsKRpwqf9Y5dFsXA==
-releaseDate: '2026-10-10T06:27:46.178Z'
+  - url: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.8/Nexlink.Setup.0.2.8.exe
+    sha512: 16nKlLNEoR9q8CCq+ordq9WhtdYge1oVuJgGRvcfP8JO7Ls4GM5P/vJbwBLVbVANcIcl8e7nNzwQvctDWpPgYA==
+    size: 111151684
+path: https://github.com/manaty/nexlink-releases/releases/download/desktop-v0.2.8/Nexlink.Setup.0.2.8.exe
+sha512: 16nKlLNEoR9q8CCq+ordq9WhtdYge1oVuJgGRvcfP8JO7Ls4GM5P/vJbwBLVbVANcIcl8e7nNzwQvctDWpPgYA==
+releaseDate: '2026-10-10T23:36:37.462Z'
