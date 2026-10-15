@@ -77,7 +77,7 @@
     </details>
 
     <footer>
-      Nexlink Desktop 0.2.11 · <a href="https://www.nexlink.ph">nexlink.ph</a> ·
+      Nexlink Desktop <span id="version">0.2.11</span> · <a href="https://www.nexlink.ph">nexlink.ph</a> ·
       <a href="https://github.com/manaty/nexlink-releases/releases">past releases</a>
     </footer>
 
@@ -96,10 +96,34 @@
           if (mine) li.style.fontWeight = '600';
         });
       }
+      // The four download links COME FROM the manifest: the page can no longer
+      // name a file the release did not publish (it drifted from 0.1.0 to
+      // 0.2.10). The static markup above is the fallback when the manifest is
+      // unreachable, so the page stays usable offline.
+      const linkFor = { windows: 'windows-x64', mac: 'macos-arm64',
+                        debian: 'linux-deb-x64', arch: 'linux-appimage-x64' };
       // Sizes and hashes come from the manifest, so the page cannot drift from it.
       fetch('/desktop/latest.json')
         .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
         .then((m) => {
+          Object.entries(linkFor).forEach(([row, id]) => {
+            const file = m.files[id] || (id === 'macos-arm64' ? m.files['macos-x64'] : null);
+            const a = document.querySelector('#files li[data-os="' + row + '"] a.dl');
+            if (!a || !file || typeof file.url !== 'string') return;
+            a.href = file.url;
+            if (typeof file.name === 'string' && file.name) {
+              a.textContent = file.name;
+              if (row === 'debian') {
+                const how = document.querySelector('#files li[data-os="debian"] .how');
+                if (how) {
+                  how.innerHTML = '<code></code>';
+                  how.querySelector('code').textContent = 'sudo apt install ./' + file.name;
+                }
+              }
+            }
+          });
+          const version = document.getElementById('version');
+          if (version && typeof m.version === 'string') version.textContent = m.version;
           const rows = Object.entries(m.files).map(([id, f]) =>
             `<div><code>${f.sha256.slice(0, 16)}…</code> ${(f.bytes / 1048576).toFixed(0)} MB — ${f.name}</div>`
           );
